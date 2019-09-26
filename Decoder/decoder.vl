@@ -1,0 +1,22 @@
+module tb_decoder;
+ 
+    reg [1:0] din;
+
+    wire dout0;
+    wire dout1;
+    wire dout2;
+    wire dout3;
+
+    decoder24 gate1 (.din(din), .dout0(dout0), .dout1(dout1), .dout2(dout2), .dout3(dout3));
+
+    initial begin
+        din = 0;
+        #5 din = 0;
+        #5 din = 1;
+        #5 din = 2;
+        #5 din = 3;
+    end
+
+    initial $monitor("din=%b, dout0=%b, dout1=%b, dout2=%b, dout3=%b", din, dout0, dout1, dout2, dout3);
+
+endmodule

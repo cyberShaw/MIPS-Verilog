@@ -1,0 +1,19 @@
+module tb_encoder;
+ 
+    reg [3:0] din;
+    
+    wire [1:0] dout;
+    
+    encoder42 gate1 (.din(din), .dout(dout));
+
+    initial begin
+        din = 1;
+        #5 din = 1;
+        #5 din = 2;
+        #5 din = 4;
+        #5 din = 8;
+    end
+
+    initial $monitor("din=%b, dout=%b", din, dout);
+
+endmodule
