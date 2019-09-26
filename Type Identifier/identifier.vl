@@ -1,0 +1,18 @@
+module instruction(inst);
+    input [0:31] inst;
+    always @(*)
+    case(inst)
+    32'b000000: begin
+                    $display("Instruction : %b",inst); 
+                    $display("R - Type Operation"); 
+                end
+    32'b000010: begin
+                    $display("Instruction : %b",inst);
+                    $display("J - Type Operation");                    
+                end
+    default:begin
+                $display("Instruction : %b",inst); 
+                $display("I - Type Operation"); 
+            end
+    endcase
+endmodule
