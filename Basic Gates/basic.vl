@@ -1,0 +1,53 @@
+module aand(a,b,d);
+    input a;
+    input b;
+    // input c;
+    output d;
+    assign d = (a)&(b);
+endmodule
+
+module oor(a,b,d);
+    input a;
+    input b;
+    // input c;
+    output d;
+    assign d = (a)|(b);
+endmodule
+
+module nnot(a,d);
+    input a;
+    output d;
+    assign d = ~a;
+endmodule
+
+module nnand(a,b,d);
+    input a;
+    input b;
+    // input c;
+    output d;
+    assign d = (~(a&b));
+endmodule
+
+module nnor(a,b,d);
+    input a;
+    input b;
+    // input c;
+    output d;
+    assign d = (~(a|b));
+endmodule
+
+module eexor(a,b,d);
+    input a;
+    input b;
+    // input c;
+    output d;
+    assign d = (a^b);
+endmodule
+
+module eexnor(a,b,d);
+    input a;
+    input b;
+    // input c;
+    output d;
+    assign d = (~(a^b));
+endmodule

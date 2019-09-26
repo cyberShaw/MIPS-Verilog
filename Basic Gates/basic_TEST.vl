@@ -1,0 +1,49 @@
+module test_GATE;
+
+reg a1,a2,a3,a4;
+wire w1,w2,w3,w4,w5,w6,y1;
+eexor gate1(.a(a2),.b(a4),.d(w1));
+nnot gate2(.a(a3),.d(w2));
+aand gate3(.a(w1),.b(w2),.d(w3));
+nnot gate4(.a(a1),.d(w4));
+aand gate5(.a(a2),.b(a3),.d(w5));
+aand gate6(.a(w5),.b(w4),.d(w6));
+oor gate7(.a(w6),.b(w3),.d(y1)); 
+
+initial
+begin
+a1=0;
+a2=0;
+a3=0;
+a4=0;
+#2 a4=1;
+#2 a3=1;
+   a4=0;
+#2 a4=1;
+#2 a4=0;
+   a3=0;
+   a2=1;
+#2 a4=1;
+#2 a4=0;
+   a3=1;
+#2 a4=1;
+#2 a4=0;
+   a3=0;
+   a2=0;
+   a1=1;
+#2 a4=1;
+#2 a3=1;
+   a4=0;
+#2 a4=1;
+#2 a4=0;
+   a3=0;
+   a2=1;
+#2 a4=1;
+#2 a4=0;
+   a3=1;
+#2 a4=1;   
+end
+
+initial $monitor("a=%b,b=%b,c=%b,d=%b,Y=%b",a1,a2,a3,a4,y1);
+endmodule
+
